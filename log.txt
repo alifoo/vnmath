@@ -1,10 +1,10 @@
-2025-05-19 02:18:51 UTC
+2025-05-19 02:50:48 UTC
 macOS-15.4.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
-Early init took 0.02s
-Loading error handling took 0.01s
-Loading script took 0.08s
+Early init took 0.03s
+Loading error handling took 0.02s
+Loading script took 0.10s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.02s
@@ -16,7 +16,7 @@ Backing up script files to '/Users/alifoo/Library/RenPy/backups/vnmath':
 Dump and make backups took 0.02s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.01s
+Initial gc took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
@@ -29,7 +29,7 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.26s
+Interface start took 0.27s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1710, 1112)
@@ -39,13 +39,9 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M2'
 Version: b'2.1 Metal - 89.4'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1710, 1041) drawable=(3420, 2082)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1710, 1041) drawable=(3420, 2082)
+Screen sizes: virtual=(1920, 1080) physical=(1710, 962) drawable=(3420, 1924)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(570, 1040) drawable=(1140, 2080)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(855, 1040) drawable=(1710, 2080)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1710, 1040) drawable=(3420, 2080)
 Maximum texture size: 4096x4096

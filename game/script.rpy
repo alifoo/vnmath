@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define Player = Character("Você", color="#607d8b")
+define Player = Character("Você")
 define Reiji = Character("Reiji", color="#c62828")
 define Aika = Character("Aika", color="#f48fb1")
 define AikaSpirit = Character("Espírito de Aika", color="#e1bee7")
@@ -12,8 +12,7 @@ define Shizuru = Character("Shizuru", color="#90a4ae")
 define Captain = Character("Capitão", color="#ffb300")
 default went_to_aika_room = False
 default went_to_interviews = False
-default Hidden = Character("???")
-define config.default_text_cps = 25
+default Hidden = Character("???", color="#2b2b2b")
 
 # The game starts here.
 
@@ -28,7 +27,6 @@ label start:
     Player "Mas o que é aquilo?"
     "Em seguida, um clarão acontece seguido de um estrondo, e você se vê perdendo a consciência."
     scene bg white with fade
-    scene bg black with fade
 
     "Uma voz ecoa em sua mente. Uma voz antiga, sem emoção, profunda."
     "{color=#f00}Quando a morte tocar sua carne, o fio será puxado...{/color}"
@@ -38,13 +36,14 @@ label start:
     "{color=#f00}A língua que ousar revelar será selada pelo próprio fardo...{/color}"
 
     "A voz enfim cessa, o silêncio toma conta do ambiente."
+    scene bg black with fade
     scene bg infirmary with fade
     "Depois de um breve momento, você finalmente acorda em um leito da enfermaria do navio. Tudo parece ter voltado ao normal."
     
-    show aika normal with fade
+    show aika normal 1 with fade
     Aika "Finalmente acordou. Você está bem?"
-    Aika "Todos os outros envolvidos no incidente já acordaram, você foi o último. Eu sou Aika, também acabei
-    desmaiando durante o ocorrido noite passada."
+    Aika "Todos os outros envolvidos no incidente já acordaram, você foi o último."
+    Aika "Também acabei desmaiando durante o ocorrido noite passada."
     Player "Ah, Aika, é você."
     Player "Entendo... você sabe se mais gente sofreu com isso?"
     Aika "Você, eu e mais 3 pessoas. Os outros já saíram, só você ainda não tinha acordado."
@@ -55,9 +54,13 @@ label start:
     "Você retorna à sua cabine."
     scene bg cabin with fade
 
-    Player "O que foi esse sonho? Será que os outros também tiveram? Mas se tiveram, por que nada foi dito sobre? Tenho que investigar isso a fundo."
+    Player "O que foi esse sonho? Será que os outros também tiveram?"
+    Player "Mas se tiveram, por que nada foi dito sobre?"
+    Player "Tenho que investigar isso a fundo... Mas ainda me sinto estranhamente cansado."
+    Player "Vou descansar um pouco antes disso."
     scene bg black with fade
 
+    "Você acorda algumas horas depois e vai até o lado de fora."
     scene bg ship with fade
     "Gritos são ouvidos pelo navio. Algo anormal parece ter acontecido."
     "Parecem estar vindo de um dos laboratórios. Você vai até o local."
@@ -65,6 +68,7 @@ label start:
     scene bg shiplab with fade
 
     Player "O que aconteceu aqui?"
+    show shizuru normal with fade
     Shizuru "Uma das pesquisadoras a bordo parece ter morrido no laboratório vítima de uma explosão."
     Shizuru "Ela esteve presente no acidente de anteontem. Não se sabe o que aconteceu, mas talvez estivesse cansada demais. Quando ouvimos a explosão, viemos ver. Reiji estava tentando ajudar, mas os danos foram fatais."
     Player "Me deixe ver o corpo."
@@ -75,7 +79,7 @@ label start:
             Shizuru "É mesmo? Tudo bem. Nesse caso, me acompanhe."
         "Justamente por isso eu deveria ir até lá.":
             Shizuru "Certo, me acompanhe."
-    hide shizuru with dissolve
+    hide shizuru normal with dissolve
 
     "Você chega na cena do crime."
 
