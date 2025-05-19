@@ -1,9 +1,4 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define Player = Character("Você")
+﻿define Player = Character("Você")
 define Reiji = Character("Reiji", color="#c62828")
 define Aika = Character("Aika", color="#f48fb1")
 define AikaSpirit = Character("Espírito de Aika", color="#e1bee7")
@@ -12,11 +7,11 @@ define Shizuru = Character("Shizuru", color="#90a4ae")
 define Captain = Character("Capitão", color="#ffb300")
 default went_to_aika_room = False
 default went_to_interviews = False
-default Hidden = Character("???", color="#2b2b2b")
+default Hidden = Character("???", color="#8e6666")
 
-# The game starts here.
 
 label start:
+    play music "audio/default.ogg"
     scene bg nightship with fade
 
     "Certa noite, um navio com diversos passageiros passa por uma terrível tempestade."
@@ -25,8 +20,9 @@ label start:
     "Você, que ainda estava acordado, nota a silhueta da criatura no mar."
 
     Player "Mas o que é aquilo?"
-    "Em seguida, um clarão acontece seguido de um estrondo, e você se vê perdendo a consciência."
+    play sound "audio/flash.ogg"
     scene bg white with fade
+    "Em seguida, um clarão acontece seguido de um estrondo, e você se vê perdendo a consciência."
 
     "Uma voz ecoa em sua mente. Uma voz antiga, sem emoção, profunda."
     "{color=#f00}Quando a morte tocar sua carne, o fio será puxado...{/color}"
@@ -43,19 +39,21 @@ label start:
     show aika normal 1 with fade
     Aika "Finalmente acordou. Você está bem?"
     Aika "Todos os outros envolvidos no incidente já acordaram, você foi o último."
-    Aika "Também acabei desmaiando durante o ocorrido noite passada."
-    Player "Ah, Aika, é você."
-    Player "Entendo... você sabe se mais gente sofreu com isso?"
+    Aika "Eu sou Aika. Também acabei desmaiando durante o ocorrido noite passada."
+    Player "Ah... você também viu aquele clarão?"
+    Aika "Sim. Algum fenômeno causou aquilo. Porém, ao contrário do que estão dizendo, não foi um de nossos experimentos."
+    Player "Ah, é verdade, você é está entre aqueles cientistas à bordo. Sabe se mais gente sofreu com isso?"
     Aika "Você, eu e mais 3 pessoas. Os outros já saíram, só você ainda não tinha acordado."
-    Aika "Enfim, também vou indo, pois tenho coisas para resolver. Te vejo depois."
+    Aika "Não se preocupe, vamos investigar o que aconteceu. É bom saber que está bem."
+    Aika "Preciso voltar ao trabalho agora. Até mais."
     Player "Ok, até."
     hide aika with dissolve
 
     "Você retorna à sua cabine."
     scene bg cabin with fade
 
-    Player "O que foi esse sonho? Será que os outros também tiveram?"
-    Player "Mas se tiveram, por que nada foi dito sobre?"
+    Player "O que foi aquele clarão? Eu não mencionei a voz que ouvi para não soar estranho... mas será que os outros também a ouviram?"
+    Player "Mas se sim, por que nada foi dito sobre?"
     Player "Tenho que investigar isso a fundo... Mas ainda me sinto estranhamente cansado."
     Player "Vou descansar um pouco antes disso."
     scene bg black with fade
@@ -70,10 +68,11 @@ label start:
     Player "O que aconteceu aqui?"
     show shizuru normal with fade
     Shizuru "Uma das pesquisadoras a bordo parece ter morrido no laboratório vítima de uma explosão."
-    Shizuru "Ela esteve presente no acidente de anteontem. Não se sabe o que aconteceu, mas talvez estivesse cansada demais. Quando ouvimos a explosão, viemos ver. Reiji estava tentando ajudar, mas os danos foram fatais."
+    Shizuru "Ela esteve presente no acidente de anteontem. Não se sabe o que aconteceu, mas talvez estivesse cansada demais."
+    Shizuru "Quando ouvimos a explosão, viemos ver. Reiji estava tentando ajudar, mas os danos foram fatais."
     Player "Me deixe ver o corpo."
 
-    Shizuru "O local foi fechado pelo capitão para que não houvesse adulteração na cena do crime. Só pode ir até lá se for médico ou oficial de segurança"
+    Shizuru "O local foi fechado pelo capitão para que não houvesse adulteração na cena do crime. Só pode ir até lá se for médico ou oficial de segurança."
     menu:
         "Eu sou um detetive.":
             Shizuru "É mesmo? Tudo bem. Nesse caso, me acompanhe."
@@ -85,11 +84,14 @@ label start:
 
     show captain normal with fade
 
-    Captain "Os únicos que estiveram aqui hoje foram Reiji, Aika e Sayu, os 3 pesquisadores a bordo. Não há vestígios de assassinato, mas até onde eu a conhecia, tal descuido não é algo que Aika faria, senhor. Talvez hoje realmente fosse seu dia, pois justamente hoje ela veio trabalhar de manhã, quando não precisava."
-    Captain "Como você é um detetive, te dou acesso a quaisquer informações que precisar para solucionar isso. Por conta da tempestade, ainda não pude contatar a central sobre o ocorrido."
+    Captain "Os únicos que estiveram aqui hoje foram Reiji, Aika e Sayu, os 3 pesquisadores a bordo."
+    Captain "Não há vestígios de assassinato, mas até onde eu a conhecia, tal descuido não é algo que Aika faria, senhor."
+    Captain "Talvez hoje realmente fosse seu dia, pois justamente hoje ela veio trabalhar de manhã, quando não precisava."
+    Captain "Como você é um detetive, te dou acesso a quaisquer informações que precisar para solucionar isso."
+    Captain "Por conta da tempestade, ainda não pude contatar a central sobre o ocorrido."
 
-    Player "{i}Aika era muito cuidadosa. Se alguém como ela cometeu um erro, ou estava exausta... ou não foi um acidente.{/i}"
-    Player "{i}Ela até mesmo veio trabalhar antes do horário, então não estava exausta, portanto não foi um acidente.{/i}"
+    Player "{i}{color=#3cb371}Aika era muito cuidadosa. Se alguém como ela cometeu um erro, ou estava exausta... ou não foi um acidente.{/i}"
+    Player "{i}{color=#3cb371}Ela até mesmo veio trabalhar antes do horário, então não estava exausta, portanto não foi um acidente.{/i}"
 
     menu:
         "Gostaria de analisar o quarto da vítima.":
@@ -102,19 +104,22 @@ label start:
 
 label cena5_1:
     scene bg aikaroom with fade
-    "O quarto de Aika parecia impecável. Tudo parecia em seu devido lugar, cuidadosamente organizado. Em cima da escrivaninha, um diário, a única pista."
+    "O quarto de Aika parecia impecável. Em cima da escrivaninha, um diário, a única pista."
 
     "Você se aproxima da escrivaninha e abre o diário em sua última página escrita."
 
     "12 de abril de 2025"
-    "Depois do ocorrido de anteontem, um cara vem me fazendo muitas perguntas. Eu acordei com meus sentidos muito mais aguçados que o normal como se fosse um superpoder, e sinto muita hostilidade vindo dele. Ele disse que também teve o sonho. Se todos os envolvidos naquilo tiveram o sonho, e os que tiveram o sonho ganharam superpoderes, então como ele teve o sonho, ganhou superpoderes, assim como eu! Mas qual?"
+    "'Depois do ocorrido de anteontem, aquele cara vem me fazendo muitas perguntas.'"
+    "'Eu acordei com meus sentidos muito mais aguçados que o normal, como se fosse um superpoder, e sinto muita hostilidade vindo dele.'"
+    "'Ele disse que também teve o sonho.'"
+    "{i}{color=#3cb371}'Se todos os envolvidos naquilo tiveram o sonho, e os que tiveram o sonho ganharam superpoderes, então como ele teve o sonho, ganhou superpoderes, assim como eu!{/color}{/i} Mas qual?'"
 
     Player "Superpoderes... então sua morte realmente pode ter sido um assassinato, mas encoberto por algo sobrenatural!"
 
     $ went_to_aika_room = True
 
     if went_to_interviews is True:
-        Player "{i}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/i}"
+        Player "{i}{color=#3cb371}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/color}{/i}"
         Player "O dia passou rápido e já está quase escurecendo. O refeitório é próximo ao laboratório, irei até lá para ver se encontro alguma pista."
         jump cena_7
     else:
@@ -130,8 +135,8 @@ label cena5_2:
     show reiji normal with fade
     
     Reiji "Sobre o ocorrido..."
-    Reiji "Falei com Aika ontem. Ela estava... tensa. Comentou que achava estar sendo observada.
-    Hoje de manhã, eu estava no laboratório com ela e Sayu. Me afastei por alguns segundos, ouvi o som do vidro se partindo e, quando me virei, o becker tinha explodido nas mãos dela."
+    Reiji "Falei com Aika ontem. Ela estava... tensa. Comentou que achava estar sendo observada."
+    Reiji "Hoje de manhã, eu estava no laboratório com ela e Sayu. Me afastei por alguns segundos, ouvi o som do vidro se partindo e, quando me virei, o becker tinha explodido nas mãos dela."
     Reiji "Se Sayu sabia de algo, escondeu de todos. Você devia conversar com ela."
 
     Player "Obrigado, irei conversar com Sayu."
@@ -139,15 +144,17 @@ label cena5_2:
 
     "Você se aproxima de Sayu e pergunta sobre o ocorrido."
     show sayu normal with fade
-    Sayu "Ontem, encostei nela acidentalmente e... tive uma visão. Algo sombrio, uma explosão. Hoje, fiquei tensa durante toda a manhã. Queria alertá-la, mas Reiji estava sempre por perto."
-    Sayu "Ele parecia nervoso demais. Aika parecia estar congelada segundos antes da explosão, parecia que nada ao seu redor além do líquido no becker se mexia, como se o tempo tivesse parado para ela."
+    Sayu "Hoje cedo, encostei nela acidentalmente e... tive uma visão."
+    Sayu "Algo sombrio, uma explosão. Fiquei tensa durante toda a manhã. Queria alertá-la, mas Reiji estava sempre por perto."
+    Sayu "Ele parecia nervoso demais."
+    Sayu "Aika parecia estar congelada segundos antes da explosão, parecia que nada ao seu redor além do líquido no becker se mexia, como se o tempo tivesse parado para ela."
 
     "Você escuta o relato de Sayu e volta à sua cabine, enquanto reflete sobre os acontecimentos."
     hide sayu normal with dissolve
 
-    Player "{i}Se Reiji disse a verdade, então Sayu sabia de algo e escondeu de todos.{/i}"
-    Player "{i}Se Sayu disse a verdade, então a causa da morte realmente foi sobrenatural.{/i}"
-    Player "{i}Pelo seu tom e sua expressão, Sayu com certeza não mentia, então a morte foi um acidente forçado por um poder.{/i}"
+    Player "{i}{color=#3cb371}Se Reiji disse a verdade, então Sayu sabia de algo e escondeu de todos.{/i}"
+    Player "{i}{color=#3cb371}Se Sayu disse a verdade, então a causa da morte realmente foi sobrenatural.{/i}"
+    Player "{i}{color=#3cb371}Pelo seu tom e sua expressão, Sayu com certeza não mentia, então a morte foi um acidente forçado por um poder.{/i}"
 
     $ went_to_interviews = True
 
