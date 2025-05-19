@@ -394,13 +394,13 @@ label cena_13:
 label cena_14:
     "no convés..."
     "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
-    Player "{i}Se eu for fireto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
+    Player "{i}Se eu for direto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
     Player "{i}Então se eu for até ele, serei apunhalado.{/i}"
     Player "Não devo fazer isso."
 
     menu:
         "Não agir":
-            "{i}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, lógicamente ele não apunhalará ninguém.{/i}"
+            "{i}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, logicamente ele não apunhalará ninguém.{/i}"
             jump cena_15_1
         "Contornar o local para ativar a iluminação de volta.":
             "{i}Se eu contornar o local, posso reativar a iluminação e deixar Reiji exposto. Farei isso, assim Reiji não poderá mais escapar.{/i}"
@@ -428,7 +428,7 @@ label cena_15_2:
     show reiji normal with fade
     Reiji "Até parece que eu vou me render a vocês!"
     Reiji "Nem morto! Morto... Morto..."
-    Reiji "Não vou conseguir matar todos eles, e meu poder não se recuperara a tempo. Não tenho para onde ir, e se eu me entregar, passarei o resto da minha vida na cadeia..."
+    Reiji "Não vou conseguir matar todos eles, e meu poder não se recuperará a tempo. Não tenho para onde ir, e se eu me entregar, passarei o resto da minha vida na cadeia..."
     Reiji "Não... Não, não, não! não!"
     Reiji "Hahahahahahaha!"
     Reiji "Sim, eu parei o tempo para que Aika derramasse aquele produto em quantidade muito maior que o esperado para que ocorresse uma explosão e ela morresse,"
