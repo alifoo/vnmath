@@ -375,8 +375,10 @@ label cena_13:
     "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
 
     menu:
-        "É questão de tempo até te encontrarem!"
-        "Eu sei que você está aí. Se entregue!"
+        "É questão de tempo até te encontrarem!":
+            pass
+        "Eu sei que você está aí. Se entregue!":
+            pass
 
     "O convés está quieto a não ser pelo sereno so da chuva. Um relâmpago revela uma silhueta emergindo das trevas."
     "Você corre em direção a ela, que de perto se torna identificável: era Reiji!"
