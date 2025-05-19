@@ -372,6 +372,82 @@ label cena_12:
 
 label cena_13:
     "Algum tempo depois, no convés..."
+    "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
 
+    menu:
+        "É questão de tempo até te encontrarem!":
+            pass
+        "Eu sei que você está aí. Se entregue!":
+            pass
 
+    "O convés está quieto a não ser pelo sereno so da chuva. Um relâmpago revela uma silhueta emergindo das trevas."
+    "Você corre em direção a ela, que de perto se torna identificável: era Reiji!"
+    "Enquanto você agarra um de seus braços, o cintilante brilho de uma lâmina corta o ar enquanto ele move o outro em direção ao seu pescoço..."
+    "...uma terrível queimação o atinge enquanto seu corpo fifca cada vez mais pesado e sua visão se torna cada vez mais turva."
+    "O fio vermelho aparece novamente."
+    
+    "Tudo está escuro..."
+    "Quando a morte tocar sua carne, o fio será puxado..."
+    "O fio se curvará ao suspiro da morte..."
+    jump cena_14
 
+label cena_14:
+    "no convés..."
+    "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
+    Player "{i}Se eu for fireto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
+    Player "{i}Então se eu for até ele, serei apunhalado.{/i}"
+    Player "Não devo fazer isso."
+
+    menu:
+        "Não agir":
+            "{i}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, lógicamente ele não apunhalará ninguém.{/i}"
+            jump cena_15_1
+        "Contornar o local para ativar a iluminação de volta.":
+            "{i}Se eu contornar o local, posso reativar a iluminação e deixar Reiji exposto. Farei isso, assim Reiji não poderá mais escapar.{/i}"
+            jump cena_15_2
+
+label cena_15_1:
+    "De repente, uma porta se abre do outro lado do convés e de lá saem Sayu e o capitão"
+    show sayu normal with fade
+    Sayu "Eu trouxe o capitão! Vamos encontrar o assassino!"
+    hide sayu normal with dissolve
+    "Antes que você pudesse dizer qualquer coisa, o capitão corre em sua direção enquanto Sayu segue reto sem saber que naquela direção encontraria seu destino."
+    "Uma sombra emerge do convés e a agarra por trás..."
+    "Antes que ela tivesse tempo para reagir, uma lâmina atinge seu peito, e ela é atirada, já sem vida, ao chão."
+    Player "Mais uma vítima!"
+    Player "{i}Se eu ir até a sala de segurança, vou conseguir uma arma.{/i}"
+    Player "{i}Se eu tiver uma arma, posso dar fim nesse pesadelo.{/i}"
+    Player "{i}Então tenho que ir até a sala de segurança!{/i}"
+
+    jump cena_16
+
+label cena_15_2:
+    "O local onde Reiji está é contornado e a iluminação é ligada novamente."
+    "Reiji se vê desnorteado e sem ter para onde correr, e a chegada de Sayu e do capitão reforça este sentimento."
+    
+    show reiji normal with fade
+    Reiji "Até parece que eu vou me render a vocês!"
+    Reiji "Nem morto! Morto... Morto..."
+    Reiji "Não vou conseguir matar todos eles, e meu poder não se recuperara a tempo. Não tenho para onde ir, e se eu me entregar, passarei o resto da minha vida na cadeia..."
+    Reiji "Não... Não, não, não! não!"
+    Reiji "Hahahahahahaha!"
+    Reiji "Sim, eu parei o tempo para que Aika derramasse aquele produto em quantidade muito maior que o esperado para que ocorresse uma explosão e ela morresse,"
+    Reiji "e iria ter matado cada um de vocês que tem poderes também."
+    Reiji "Com estes poderes, vocês apresentam ao mundo uma ameaça muito maior que qualquer bandido, e eu preciso acabar com vocês um por um!"
+    hide reiji normal with dissolve
+
+    "Num acesso de loucura e frente à pressão criada por aqueles ao seu redor, Reiji exerce seu último ato de egoísmo contra o mundo"
+    "Saca sua faca pela última vez, mas desta vez não contra Sayu, não contra você, não contra o capitão..."
+    "Mas contra si mesmo."
+    "Dentro de poucos segundos, o causador de toda a tragédia está no chão. Imóvel."
+    "O pesadelo chegara ao fim, e o caso estava resolvido."
+
+label cena_16:
+    # não tem um cenário da sala de segurança?
+    "Na sala de segurança..."
+
+    "Você encontra uma espingarda, mas junto de você chega também Reiji, que tenta matá-lo antes que pegue a arma."
+    "A faca é acertada em você uma vez, mas ao custo de ser jogada para longe."
+    "Em questão de segundos a arma está em suas mãos, e dentro do mesmo tempo, o assassino está no chão. Imóvel."
+    "O pesadelo chegara ao fim, e o caso estava resolvido."
+    
