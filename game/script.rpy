@@ -36,7 +36,7 @@ label start:
     scene bg infirmary with fade
     "Depois de um breve momento, você finalmente acorda em um leito da enfermaria do navio. Tudo parece ter voltado ao normal."
     
-    show aika normal 1 with fade
+    show aika normal with fade
     Aika "Finalmente acordou. Você está bem?"
     Aika "Todos os outros envolvidos no incidente já acordaram, você foi o último."
     Aika "Eu sou Aika. Também acabei desmaiando durante o ocorrido noite passada."
@@ -90,8 +90,8 @@ label start:
     Captain "Como você é um detetive, te dou acesso a quaisquer informações que precisar para solucionar isso."
     Captain "Por conta da tempestade, ainda não pude contatar a central sobre o ocorrido."
 
-    Player "{i}{color=#3cb371}Aika era muito cuidadosa. Se alguém como ela cometeu um erro, ou estava exausta... ou não foi um acidente.{/i}"
-    Player "{i}{color=#3cb371}Ela até mesmo veio trabalhar antes do horário, então não estava exausta, portanto não foi um acidente.{/i}"
+    Player "{i}{color=#ffb300}Aika era muito cuidadosa. Se alguém como ela cometeu um erro, ou estava exausta... ou não foi um acidente.{/i}"
+    Player "{i}{color=#ffb300}Ela até mesmo veio trabalhar antes do horário, então não estava exausta, portanto não foi um acidente. (Silogismo disjuntivo){/i}"
 
     menu:
         "Gostaria de analisar o quarto da vítima.":
@@ -112,14 +112,15 @@ label cena5_1:
     "'Depois do ocorrido de anteontem, aquele cara vem me fazendo muitas perguntas.'"
     "'Eu acordei com meus sentidos muito mais aguçados que o normal, como se fosse um superpoder, e sinto muita hostilidade vindo dele.'"
     "'Ele disse que também teve o sonho.'"
-    "{i}{color=#3cb371}'Se todos os envolvidos naquilo tiveram o sonho, e os que tiveram o sonho ganharam superpoderes, então como ele teve o sonho, ganhou superpoderes, assim como eu!{/color}{/i} Mas qual?'"
+    "{i}{color=#ffb300}'Se todos os envolvidos naquilo tiveram o sonho, e os que tiveram o sonho ganharam superpoderes, então como ele teve o sonho, ganhou superpoderes, assim como eu!{/color}{/i} (Modus Ponens)"
+    "Mas qual?'"
 
     Player "Superpoderes... então sua morte realmente pode ter sido um assassinato, mas encoberto por algo sobrenatural!"
 
     $ went_to_aika_room = True
 
     if went_to_interviews is True:
-        Player "{i}{color=#3cb371}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/color}{/i}"
+        Player "{i}{color=#3cb371}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/color}{/i} (Modus Ponens)"
         Player "O dia passou rápido e já está quase escurecendo. O refeitório é próximo ao laboratório, irei até lá para ver se encontro alguma pista."
         jump cena_7
     else:
@@ -152,9 +153,9 @@ label cena5_2:
     "Você escuta o relato de Sayu e volta à sua cabine, enquanto reflete sobre os acontecimentos."
     hide sayu normal with dissolve
 
-    Player "{i}{color=#3cb371}Se Reiji disse a verdade, então Sayu sabia de algo e escondeu de todos.{/i}"
-    Player "{i}{color=#3cb371}Se Sayu disse a verdade, então a causa da morte realmente foi sobrenatural.{/i}"
-    Player "{i}{color=#3cb371}Pelo seu tom e sua expressão, Sayu com certeza não mentia, então a morte foi um acidente forçado por um poder.{/i}"
+    Player "{i}{color=#ffb300}Se Reiji disse a verdade, então Sayu sabia de algo e escondeu de todos.{/i}"
+    Player "{i}{color=#ffb300}Se Sayu disse a verdade, então a causa da morte realmente foi sobrenatural.{/i}"
+    Player "{i}{color=#ffb300}Pelo seu tom e sua expressão, Sayu com certeza não mentia, então a morte foi um acidente forçado por um poder.{/i} (Modus Ponens + Silog. Disj.)"
 
     $ went_to_interviews = True
 
@@ -162,7 +163,7 @@ label cena5_2:
         Player "É melhor eu vasculhar a cabine de Aika em busca de informações."
         jump cena5_1
     else:
-        Player "{i}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/i}"
+        Player "{i}Se Aika fala em seu diário que um homem que fazia perguntas também tinha poderes e Reiji diz ter conversado com ela, então ele deve ser quem ela se referiu no diário.{/i} (Modus Ponens)"
         Player "O dia passou rápido e já está quase escurecendo. O refeitório é próximo ao laboratório, irei até lá para ver se encontro alguma pista."
         jump cena_7
 
@@ -256,23 +257,24 @@ label cena_9:
     "Você acorda de repente, novamente no refeitório."
     Player "Devo fugir o mais rápido possível."
 
+    scene bg corridor with fade
     "Dessa vez, você consegue sair do refeitório e correr para os corredores do navio."
 
     Player "Preciso pensar! Qual deve ser o poder dele?"
 
     menu:
         "Parar o tempo":
-            Player "Seu poder deve ser o de parar o tempo."
-            Player "Porém, tem algo estranho... se seu poder não tivesse limites, ele teria parado o tempo antes de eu sair do refeitório, mas não fez isso."
-            Player "Então seu poder deve ter limite de distância."
-            Player "Além disso, se seu poder não tivesse limite de tempo de atuação, ele me deixaria preso o tempo todo enquanto conversávamos."
-            Player "Ele não fez isso, então seu poder tem limite de tempo."
+            Player "{i}{color=#ffb300}Seu poder deve ser o de parar o tempo."
+            Player "{i}{color=#ffb300}Porém, tem algo estranho... se seu poder não tivesse limites, ele teria parado o tempo antes de eu sair do refeitório, mas não fez isso."
+            Player "{i}{color=#ffb300}Então seu poder deve ter limite de distância. (Modus Tollens)"
+            Player "{i}{color=#ffb300}Além disso, se seu poder não tivesse limite de tempo de atuação, ele me deixaria preso o tempo todo enquanto conversávamos."
+            Player "{i}{color=#ffb300}Ele não fez isso, então seu poder tem limite de tempo. (Modus Tollens)"
         "Controlar pessoas":
-            Player "Talvez o poder dele seja controlar pessoas. Assim, ele poderia impedir os meus movimentos."
-            Player "Mas não faz muito sentido... Ele não impediu que eu corresse dessa vez."
-            Player "Seu poder deve ser algo ainda mais extraordinário, como parar o tempo. Mas deve ter limitações, como a distância."
-            Player "Além disso, se seu poder não tivesse limite de tempo de atuação, ele me deixaria preso o tempo todo enquanto conversávamos."
-            Player "Ele não fez isso, então seu poder tem limite de tempo."
+            Player "{i}{color=#ffb300}Talvez o poder dele seja controlar pessoas. Assim, ele poderia impedir os meus movimentos."
+            Player "{i}{color=#ffb300}Mas não faz muito sentido... Ele não impediu que eu corresse dessa vez."
+            Player "{i}{color=#ffb300}Seu poder deve ser algo ainda mais extraordinário, como parar o tempo. Mas deve ter limitações, como a distância. (Modus Tollens)"
+            Player "{i}{color=#ffb300}Além disso, se seu poder não tivesse limite de tempo de atuação, ele me deixaria preso o tempo todo enquanto conversávamos."
+            Player "{i}{color=#ffb300}Ele não fez isso, então seu poder tem limite de tempo. (Modus Tollens)"
     
     Player "A lista de todos os envolvidos no acidente deve ajudar a descobrir o assassino! O capitão pode me fornecer ela."
 
@@ -321,9 +323,9 @@ label cena_11:
 
     Shizuru "Preciso do máximo de informações possíveis para formular a pergunta. Só tenho direito a uma, e ela precisa ser certeira."
     "Você conta tudo que sabe a Shizuru."
-    Shizuru "{i}Eu, Reiji e Sayu eram suspeitos.{/i}"
-    Shizuru "{i}Provando minha inocência, eu deixarei de ser suspeito,{/i}"
-    Shizuru "{i}Então Reiji e Sayu são.{/i}"
+    Shizuru "{i}{color=#ffb300}Eu, Reiji e Sayu eram suspeitos.{/i}"
+    Shizuru "{i}{color=#ffb300}Provando minha inocência, eu deixarei de ser suspeito,{/i}"
+    Shizuru "{i}{color=#ffb300}Então Reiji e Sayu são.{/i} (Silogismo Disjuntivo)"
 
     Shizuru "Se Aika conversou tanto com Reiji e Sayu, então talvez tivesse usado seus poderes em algum deles e tivesse uma pista de sua morte."
     Shizuru "Esta será minha pergunta."
@@ -336,8 +338,8 @@ label cena_11:
 
     Shizuru "É isso. Agora me deixe fora dessa história."
 
-    Player "Se o perigo vinha de um homem e o único homem lá era Reiji, então o perigo vinha dele."
-    Player "Aika já falou sobre ele em seu diário, então ele deve ser o assassino!"
+    Player "{i}{color=#ffb300}Se o perigo vinha de um homem e o único homem lá era Reiji, então o perigo vinha dele."
+    Player "{i}{color=#ffb300}Aika já falou sobre ele em seu diário, então ele deve ser o assassino!{/i} (Modus Ponens)"
     Player "Vou falar com Reiji sobre isso. Se fingir que já sei de tudo, posso fazê-lo confessar se for verdade."
 
     jump cena_12
@@ -354,9 +356,9 @@ label cena_12:
             "Ao ouvir isso, Reiji te olha por um instante. Você congela e logo percebe que Reiji não está mais ali."
         
     Player "Droga! Temos que encontrá-lo."
-    Player "{i}O refeitório só dá acesso ao convés e à proa. Ele não irá para onde não pode se esconder, então foi ao convés.{/i}"
-    Player "{i}Se ele tem limitações quanto ao tempo de uso, então tem que esperar para usar novamente seu poder.{/i}"
-    Player "{i}Ele acabou de o usar, então temos um intervalo até ele poder usá-lo de novo.{/i}"
+    Player "{i}{color=#ffb300}O refeitório só dá acesso ao convés e à proa. Ele não irá para onde não pode se esconder, então foi ao convés.{/i} (Silogismo disjuntivo)"
+    Player "{i}{color=#ffb300}Se ele tem limitações quanto ao tempo de uso, então tem que esperar para usar novamente seu poder.{/i}"
+    Player "{i}{color=#ffb300}Ele acabou de o usar, então temos um intervalo até ele poder usá-lo de novo.{/i} (Modus Ponens)"
 
     Player "Eu vou até o convés e vou encontrar formas de pará-lo."
     Sayu "Vou avisar Shizuru e o capitão."
@@ -365,7 +367,7 @@ label cena_12:
 
     show reiji normal with fade
     Reiji "Preciso achar um jeito de matar esses dois o mais rápido possível. Assim que meu poder recarregar, o uso para isso. Só mais uma hora."
-    Reiji "{i}Virão me procurar, mas se eu usar meu poder irei os matar, e com certeza irei usar. Logo, os matarei!{/i}"
+    Reiji "{i}{color=#f00}Virão me procurar, mas se eu usar meu poder irei os matar, e com certeza irei usar. Logo, os matarei!{/i}{/color} (Modus ponens)"
 
     hide reiji normal with dissolve
     jump cena_13
@@ -394,16 +396,16 @@ label cena_13:
 label cena_14:
     "no convés..."
     "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
-    Player "{i}Se eu for direto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
-    Player "{i}Então se eu for até ele, serei apunhalado.{/i}"
+    Player "{i}{color=#ffb300}Se eu for direto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
+    Player "{i}{color=#ffb300}Então se eu for até ele, serei apunhalado.{/i} (Silogismo hipotético)"
     Player "Não devo fazer isso."
 
     menu:
         "Não agir":
-            "{i}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, logicamente ele não apunhalará ninguém.{/i}"
+            "{i}{color=#ffb300}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, logicamente ele não apunhalará ninguém.{/i} (Modus Ponens)"
             jump cena_15_1
         "Contornar o local para ativar a iluminação de volta.":
-            "{i}Se eu contornar o local, posso reativar a iluminação e deixar Reiji exposto. Farei isso, assim Reiji não poderá mais escapar.{/i}"
+            "{i}{color=#ffb300}Se eu contornar o local, posso reativar a iluminação e deixar Reiji exposto. Farei isso, assim Reiji não poderá mais escapar.{/i} (Modus Ponens)"
             jump cena_15_2
 
 label cena_15_1:
@@ -415,9 +417,9 @@ label cena_15_1:
     "Uma sombra emerge do convés e a agarra por trás..."
     "Antes que ela tivesse tempo para reagir, uma lâmina atinge seu peito, e ela é atirada, já sem vida, ao chão."
     Player "Mais uma vítima!"
-    Player "{i}Se eu ir até a sala de segurança, vou conseguir uma arma.{/i}"
-    Player "{i}Se eu tiver uma arma, posso dar fim nesse pesadelo.{/i}"
-    Player "{i}Então tenho que ir até a sala de segurança!{/i}"
+    Player "{i}{color=#ffb300}Se eu ir até a sala de segurança, vou conseguir uma arma.{/i}"
+    Player "{i}{color=#ffb300}Se eu tiver uma arma, posso dar fim nesse pesadelo.{/i}"
+    Player "{i}{color=#ffb300}Então tenho que ir até a sala de segurança!{/i} (Silogismo hipotético)"
 
     jump cena_16
 
