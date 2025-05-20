@@ -2,9 +2,25 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 123: expected statement.
-    went_to_aika_room = True
-                      ^
+File "game/script.rpy", line 342: end of line expected.
+    show aika normal with fade at right
+                               ^
+
+File "game/script.rpy", line 360: end of line expected.
+    show sayu normal with fade at left
+                               ^
+
+File "game/script.rpy", line 361: end of line expected.
+    show reiji normal with fade at right
+                                ^
+
+File "game/script.rpy", line 433: end of line expected.
+    show sayu normal with fade at left
+                               ^
+
+File "game/script.rpy", line 434: end of line expected.
+    show captain normal with fade at right
+                                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 18 21:46:21 2025
+Mon May 19 20:01:30 2025

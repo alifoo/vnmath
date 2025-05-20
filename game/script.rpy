@@ -47,7 +47,7 @@ label start:
     Aika "Não se preocupe, vamos investigar o que aconteceu. É bom saber que está bem."
     Aika "Preciso voltar ao trabalho agora. Até mais."
     Player "Ok, até."
-    hide aika with dissolve
+    hide aika normal with dissolve
 
     "Você retorna à sua cabine."
     scene bg cabin with fade
@@ -109,8 +109,8 @@ label cena5_1:
     "Você se aproxima da escrivaninha e abre o diário em sua última página escrita."
 
     "12 de abril de 2025"
-    "'Depois do ocorrido de anteontem, aquele cara vem me fazendo muitas perguntas.'"
-    "'Eu acordei com meus sentidos muito mais aguçados que o normal, como se fosse um superpoder, e sinto muita hostilidade vindo dele.'"
+    "'Desde que começamos a pesquisa, aquele cara vem me fazendo muitas perguntas.'"
+    "'Hoje, depois do ocorrido, eu acordei com meus sentidos muito mais aguçados que o normal, como se fosse um superpoder, e sinto muita hostilidade vindo dele.'"
     "'Ele disse que também teve o sonho.'"
     "{i}{color=#ffb300}'Se todos os envolvidos naquilo tiveram o sonho, e os que tiveram o sonho ganharam superpoderes, então como ele teve o sonho, ganhou superpoderes, assim como eu!{/color}{/i} (Modus Ponens)"
     "Mas qual?'"
@@ -195,6 +195,7 @@ label cena_7:
     "Você não consegue sentir nada."
     "Falar nada."
     "Ver nada."
+    play sound "audio/death.ogg"
     "Até que então um fio vermelho cruza seu campo de visão."
 
     "'Este é o seu destino.'"
@@ -233,6 +234,7 @@ label cena_8_1:
     Hidden "Esse é o meu poder. Dessa vez, foi seu coração. Da última, foi o corpo de Aika."
 
     "Tudo fica preto. O fio vermelho aparece novamente"
+    play sound "audio/death.ogg"
     "A maldição..."
     "Seu retorno trará a memória, o eco do futuro, o peso..."
 
@@ -248,6 +250,7 @@ label cena_8_2:
         "Por que faz isso?":
             Hidden "Porque preciso de todos vocês, que também ganharam poderes, mortos."
 
+    play sound "audio/death.ogg"
     "Tudo fica preto. O fio vermelho aparece novamente"
     "A maldição..."
     "A língua que ousar revelar será selada pelo próprio fardo..."
@@ -279,10 +282,12 @@ label cena_9:
     Player "A lista de todos os envolvidos no acidente deve ajudar a descobrir o assassino! O capitão pode me fornecer ela."
 
     "Você escapou com sucesso e foi até o capitão."
+    scene bg captain_room with fade
     show captain normal with fade
 
     Player "Capitão! Por favor, preciso da lista de envolvidos no acidente."
     Captain "Aqui está, detetive."
+    hide captain normal with dissolve
 
     "
     Lista de envolvidos no incidente do dia 10 de abril de 2025
@@ -299,8 +304,10 @@ label cena_9:
     jump cena_10
 
 label cena_10:
+    scene bg ship with fade
     "Você procura por Shizuru no cruzeiro e o encontra."
 
+    show shizuru normal with fade
     Shizuru "Já sei o que você quer, mas antes preciso confirmar algo: você também teve uma visão depois de perder a consciência?"
 
     menu:
@@ -315,10 +322,12 @@ label cena_10:
     Shizuru "Acredite se quiser."
 
     Player "Shizuku... Essa pode ser a solução que precisamos. Venha comigo."
-
+    hide shizuru normal with dissolve
     jump cena_11
 
 label cena_11:
+    scene bg shiplab2 with fade
+    show shizuru normal with fade
     "Você e Shizuru se aproximam do corpo da vítima, no local interditado."
 
     Shizuru "Preciso do máximo de informações possíveis para formular a pergunta. Só tenho direito a uma, e ela precisa ser certeira."
@@ -333,10 +342,12 @@ label cena_11:
     "Shizuru se ajoelha próximo ao cadáver, fecha os olhos, e pergunta:"
     Shizuru "Tu, que sabes mais que todos sobre si mesma e que revelou aos outros seus poderes, responda-me:"
     Shizuru "O que seus poderes revelaram?"
+    show aika normal at right with fade
 
     AikaSpirit "O perigo vinha de um único homem. O desespero vinha dela."
-
+    hide aika normal with dissolve
     Shizuru "É isso. Agora me deixe fora dessa história."
+    hide shizuru with dissolve
 
     Player "{i}{color=#ffb300}Se o perigo vinha de um homem e o único homem lá era Reiji, então o perigo vinha dele."
     Player "{i}{color=#ffb300}Aika já falou sobre ele em seu diário, então ele deve ser o assassino!{/i} (Modus Ponens)"
@@ -345,14 +356,18 @@ label cena_11:
     jump cena_12
 
 label cena_12:
+    scene bg refeitorio with fade
     "Ao sair procurando por Reiji, você decide passar novamente próximo ao refeitório. Dessa vez, com mais cuidado."
 
     "Sayu e Reiji estão conversando quando você chega. Você nota uma expressão de raiva no rosto de Reiji."
-
+    show sayu normal at left with fade
+    show reiji normal at right with fade
     menu:
         "Saia de perto dele, Reiji é o assassino!":
+            hide reiji with dissolve
             "Ao dizer isso, você congela e logo percebe que Reiji não está mais ali."
         "Então você é o assassino de Aika, e também aquele que tentou me matar!":
+            hide reiji with dissolve
             "Ao ouvir isso, Reiji te olha por um instante. Você congela e logo percebe que Reiji não está mais ali."
         
     Player "Droga! Temos que encontrá-lo."
@@ -363,6 +378,7 @@ label cena_12:
     Player "Eu vou até o convés e vou encontrar formas de pará-lo."
     Sayu "Vou avisar Shizuru e o capitão."
 
+    scene bg ship with fade
     "Enquanto isso, no convés..."
 
     show reiji normal with fade
@@ -373,6 +389,7 @@ label cena_12:
     jump cena_13
 
 label cena_13:
+    scene bg nightship with fade
     "Algum tempo depois, no convés..."
     "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
 
@@ -384,6 +401,8 @@ label cena_13:
 
     "O convés está quieto a não ser pelo sereno so da chuva. Um relâmpago revela uma silhueta emergindo das trevas."
     "Você corre em direção a ela, que de perto se torna identificável: era Reiji!"
+    show reiji normal with fade
+    play sound "audio/death.ogg"
     "Enquanto você agarra um de seus braços, o cintilante brilho de uma lâmina corta o ar enquanto ele move o outro em direção ao seu pescoço..."
     "...uma terrível queimação o atinge enquanto seu corpo fifca cada vez mais pesado e sua visão se torna cada vez mais turva."
     "O fio vermelho aparece novamente."
@@ -391,17 +410,21 @@ label cena_13:
     "Tudo está escuro..."
     "Quando a morte tocar sua carne, o fio será puxado..."
     "O fio se curvará ao suspiro da morte..."
+    scene bg black with fade
     jump cena_14
 
 label cena_14:
-    "no convés..."
+    scene bg nightship with fade
+    "No convés..."
     "O céu começava a ficar escuro. A noite chegava junto de um terrível aguaceiro, e o convés era iluminado apenas pelos relâmpagos: a eletricidade havia sido cortada por alguém, possivelmente Reiji."
+    Player "O que? Eu voltei no tempo? Eu pude ver Reiji me matando!"
+    Player "Me parece que esse é o meu poder. Eu tenho mais uma chance!"
     Player "{i}{color=#ffb300}Se eu for direto até Reiji, ele vai sacar a lâmina. Se ele fizer isso, será para me apunhalar.{/i}"
     Player "{i}{color=#ffb300}Então se eu for até ele, serei apunhalado.{/i} (Silogismo hipotético)"
     Player "Não devo fazer isso."
 
     menu:
-        "Não agir":
+        "Esperar o capitão chegar":
             "{i}{color=#ffb300}Se eu for até ele, ele apunhalará alguém. Então não vou até ele, logicamente ele não apunhalará ninguém.{/i} (Modus Ponens)"
             jump cena_15_1
         "Contornar o local para ativar a iluminação de volta.":
@@ -410,16 +433,21 @@ label cena_14:
 
 label cena_15_1:
     "De repente, uma porta se abre do outro lado do convés e de lá saem Sayu e o capitão"
-    show sayu normal with fade
+
+    show sayu normal at left with fade
+    show captain normal at right with fade
     Sayu "Eu trouxe o capitão! Vamos encontrar o assassino!"
-    hide sayu normal with dissolve
     "Antes que você pudesse dizer qualquer coisa, o capitão corre em sua direção enquanto Sayu segue reto sem saber que naquela direção encontraria seu destino."
     "Uma sombra emerge do convés e a agarra por trás..."
     "Antes que ela tivesse tempo para reagir, uma lâmina atinge seu peito, e ela é atirada, já sem vida, ao chão."
-    Player "Mais uma vítima!"
+    hide sayu normal with dissolve
+    hide captain normal with dissolve
+    show reiji normal with fade
+    Player "Maldito Reiji!"
     Player "{i}{color=#ffb300}Se eu ir até a sala de segurança, vou conseguir uma arma.{/i}"
     Player "{i}{color=#ffb300}Se eu tiver uma arma, posso dar fim nesse pesadelo.{/i}"
     Player "{i}{color=#ffb300}Então tenho que ir até a sala de segurança!{/i} (Silogismo hipotético)"
+    hide reiji normal with dissolve
 
     jump cena_16
 
@@ -436,20 +464,27 @@ label cena_15_2:
     Reiji "Sim, eu parei o tempo para que Aika derramasse aquele produto em quantidade muito maior que o esperado para que ocorresse uma explosão e ela morresse,"
     Reiji "e iria ter matado cada um de vocês que tem poderes também."
     Reiji "Com estes poderes, vocês apresentam ao mundo uma ameaça muito maior que qualquer bandido, e eu preciso acabar com vocês um por um!"
-    hide reiji normal with dissolve
 
     "Num acesso de loucura e frente à pressão criada por aqueles ao seu redor, Reiji exerce seu último ato de egoísmo contra o mundo"
     "Saca sua faca pela última vez, mas desta vez não contra Sayu, não contra você, não contra o capitão..."
     "Mas contra si mesmo."
     "Dentro de poucos segundos, o causador de toda a tragédia está no chão. Imóvel."
     "O pesadelo chegara ao fim, e o caso estava resolvido."
+    hide reiji normal with dissolve
+    "Final bom: 10 pts."
+
+    return
 
 label cena_16:
-    # não tem um cenário da sala de segurança?
+    scene bg security_room with fade
     "Na sala de segurança..."
 
     "Você encontra uma espingarda, mas junto de você chega também Reiji, que tenta matá-lo antes que pegue a arma."
+    show reiji normal with fade
+    Reiji "Morra!"
     "A faca é acertada em você uma vez, mas ao custo de ser jogada para longe."
     "Em questão de segundos a arma está em suas mãos, e dentro do mesmo tempo, o assassino está no chão. Imóvel."
     "O pesadelo chegara ao fim, e o caso estava resolvido."
-    
+    hide reiji normal with dissolve
+    "Final ruim: 5 pts"
+    return
